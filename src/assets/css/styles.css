@@ -69,7 +69,7 @@ ul {
     /***********************************STRUCTURE ***********************/
     .container {
         margin-inline: auto;
-        width: min(100% - 3em, 960px);
+        width: min(100% - 3em, 1000px);
     }
 
     .flow > * + * {
@@ -158,11 +158,16 @@ header {
 }
 /*********************************** HEADER ***********************/
 
+#content {
+    transition: transform 300ms;
+}
+
 
 
 section {
     padding-block: 5rem;
     margin-bottom: 5rem;
+    padding-inline: 5rem;
 }
 
 .ingredients {
@@ -187,6 +192,16 @@ section {
 
 .popular-content {
     --flex-gap: 5rem;
+}
+
+.fresh-content .grid {
+    --flow: 2rem;
+    margin-top: 6rem;
+}
+
+.contact-section {
+    border-radius: 5em;
+    background-color: lightsalmon;
 }
 
 
