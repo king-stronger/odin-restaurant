@@ -1,4 +1,4 @@
-import ContactImage from './assets/img/contact-image.png';
+import ContactImage from './assets/img/popular.png';
 
 const section = `
     <section class="contact-section grid">
