@@ -1,0 +1,205 @@
+:root {
+    --flow: 1rem;
+
+    --grid-gap: 3em;
+    --grid-repeat: 1;
+    --grid-content-size: 1fr;
+
+    --flex-gap: 0;
+    --flex-align: center;
+    --flex-direction: row;
+    --flex-justify: space-between;
+}
+
+
+/***********************************RESET CSS ***********************/
+* {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100dvh;
+    background: PapayaWhip;
+}
+
+h1, h2, h3 {
+    text-wrap: balance;
+}
+
+p {
+    color: #222;
+    max-width: 60ch;
+    text-wrap: pretty;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    font: inherit;
+    cursor: pointer;
+    background: none;
+}
+
+img, video, svg, picture {
+    display: block;
+    max-width: 100%;
+    border-radius: .5rem;
+}
+
+ul {
+    list-style-type: none;
+}
+/***********************************RESET CSS ***********************/
+
+
+/***********************************REUSABLE CSS ***********************/
+    /***********************************STRUCTURE ***********************/
+    .container {
+        margin-inline: auto;
+        width: min(100% - 3em, 960px);
+    }
+
+    .flow > * + * {
+        margin-top: var(--flow, 1rem);
+    }
+
+    .grid {
+        display: grid;
+        gap: var(--grid-gap);
+        grid-template-columns: repeat(var(--grid-repeat), var(--grid-content-size));
+        align-items: center;
+    }
+
+    .flex {
+        display: flex;
+        gap: var(--flex-gap, 0);
+        align-items: var(--flex-align, center);
+        flex-direction: var(--flex-direction, row);
+        justify-content: var(--flex-justify, space-between);
+    }
+    /***********************************STRUCTURE ***********************/
+
+    /***********************************TYPOGRAPHY ***********************/
+    .text-center {
+        text-align: center;
+        margin-inline: auto;
+    }
+
+    .text-xl {
+        font-size: 3rem;
+    }
+
+    .text-lg {
+        font-size: 2rem;
+    }
+
+    .text-lg {
+        font-size: 1.5rem;
+    }
+
+    .text-normal {
+        font-size: 1;
+    }
+
+    .text-sm {
+        font-size: 0.875rem;
+    }
+
+    .text-xs {
+        font-size: 0.75rem;
+    }
+    /***********************************TYPOGRAPHY ***********************/
+
+/***********************************REUSABLE CSS ***********************/
+
+.button {
+    padding: .5em 1em;
+    border-radius: 10em;
+    background: orange;
+}
+
+.button:hover {
+    scale: 1.1;
+    box-shadow: 0 0 3px 3px orange;
+}
+
+/*********************************** HEADER ***********************/
+header {
+    padding-block: 1em;
+    margin-bottom: 10rem;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links {
+    font-size: 1.1rem;
+}
+
+.nav-links:hover {
+    scale: 1.1;
+    color: orange;
+    text-shadow: 0 0 1px orange;
+}
+/*********************************** HEADER ***********************/
+
+
+
+section {
+    padding-block: 5rem;
+    margin-bottom: 5rem;
+}
+
+.ingredients {
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+    grid-template-columns: 1fr 3fr;
+}
+
+.fresh-img img{
+    aspect-ratio: 2/4;
+}
+
+
+.hero-content,
+.about-content,
+.popular-content,
+.fresh-content,
+.contact-content {
+    --flow: 3rem;
+}
+
+.popular-content {
+    --flex-gap: 5rem;
+}
+
+
+@media screen and (min-width: 900px){
+    .grid {
+        --grid-repeat: 2;
+    }
+
+    .fresh-content .grid {
+        --grid-repeat: 3;
+    }
+
+    .fresh-img {
+        grid-column: span 2;
+    }
+}
